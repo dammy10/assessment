@@ -7,8 +7,8 @@ class TestUserValidation(unittest.TestCase):
     def test_valid_user(self):
         user = {
             "id": 1,
-            "name": "Alice",
-            "email": "alice@example.com",
+            "name": "Dave",
+            "email": "dave@example.com",
             "created_at": datetime.now().isoformat()
         }
         self.assertTrue(validate_user_data(user))
@@ -16,7 +16,7 @@ class TestUserValidation(unittest.TestCase):
     def test_missing_email(self):
         user = {
             "id": 1,
-            "name": "Bob",
+            "name": "Dave",
             "created_at": datetime.now().isoformat()
         }
         self.assertFalse(validate_user_data(user))
