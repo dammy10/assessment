@@ -44,15 +44,19 @@ def validate_user_data(data):
         logging.error(f"Unexpected error during validation: {e}")
         return False
 
-
+# Mock Example
 def fetch_user():
         return {
         "id": 1,
-        "name": "Jane Doe",
-        "email": "jane.doe@example.com",
+        "name": "David Adedipe",
+        "email": "david.adedipe@example.com",
         "created_at": datetime.now().isoformat()
     }
+
 if __name__ == "__main__":
     user_data = fetch_user()
     is_valid = validate_user_data(user_data)
     print("Is valid user?", is_valid)
+
+
+#I created a function that checks if the user data is valid based on the id, name, email, and created_at fields. I added a python logging that shows if any of these fields is missing or invalid, it logs an error message and returns False. i also added a unittest that runs a mock function to fetch user data for testing. The main function validates the fetched user data and prints whether the data is valid or not.

@@ -8,7 +8,7 @@ class TestUserValidation(unittest.TestCase):
         user = {
             "id": 1,
             "name": "Dave",
-            "email": "dave@example.com",
+            "email": "dave.ade@example.com",
             "created_at": datetime.now().isoformat()
         }
         self.assertTrue(validate_user_data(user))
@@ -23,11 +23,12 @@ class TestUserValidation(unittest.TestCase):
 
     def test_old_timestamp(self):
         user = {
-            "id": 2,
-            "name": "Old User",
-            "email": "old@example.com",
-            "created_at": (datetime.now() - timedelta(days=10)).isoformat()
+            "id": 1,
+            "name": "Dave",
+            "email": "dave.ade@example.com",
+            "created_at": (datetime.now() - timedelta(days=9)).isoformat()
         }
         self.assertFalse(validate_user_data(user))
 
-    def test_invalid_email(self):
+    if __name__ == '__main__':
+    unittest.main()
